@@ -1,4 +1,4 @@
-package io.bit.up;
+package io.bit.up.spring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

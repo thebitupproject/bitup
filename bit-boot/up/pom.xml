@@ -11,142 +11,44 @@
 
 	<artifactId>up</artifactId>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<!-- check these for changes and compatibility when upgrading Spring Boot -->
-		<commons-logging.version>1.2</commons-logging.version>
-		<springboot.version>1.4.2.RELEASE</springboot.version>
-	</properties>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>com.amazonaws</groupId>
-				<artifactId>aws-java-sdk-bom</artifactId>
-				<version>1.11.22</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<dependencies>
-		<!-- Spring framework -->
+		<!-- Spring -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-context</artifactId>
-		    <version>4.3.4.RELEASE</version>
-		    <exclusions>
-			    <exclusion>
-			      <artifactId>commons-logging</artifactId>
-			      <groupId>commons-logging</groupId>
-			    </exclusion>
-		    </exclusions>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
 		</dependency>
 
 		<!-- AWS Lambda developpement model -->
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-lambda-java-core</artifactId>
-			<version>1.1.0</version>
 		</dependency>
 
-		<!-- Data validation -->
+		<!-- Business services -->
 		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>1.1.0.Final</version>
+			<groupId>io.bit</groupId>
+			<artifactId>services</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-    		<version>5.3.4.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.el</groupId>
-			<artifactId>el-api</artifactId>
-			<version>2.2.1-b04</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.sun.el</groupId>
-		    <artifactId>el-ri</artifactId>
-		    <version>1.0</version>
-		</dependency>
-		
-		<!-- AWS EC2 service SDK : Launching instances and other cool stuffs -->
-		<dependency>
-			<groupId>com.amazonaws</groupId>
-			<artifactId>aws-java-sdk-ec2</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.9.7</version>
-		</dependency>
-		
-		
+
 		<!-- Logging -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-log4j12</artifactId>
-		    <version>1.7.22</version>
-		</dependency>		
-		<dependency>
-		    <groupId>com.amazonaws</groupId>
-		    <artifactId>aws-lambda-java-log4j</artifactId>
-		    <version>1.0.0</version>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-lambda-java-log4j</artifactId>
 		</dependency>
 
-		<!-- Testing -->
+		<!-- Test -->
 		<dependency>
-		    <groupId>junit</groupId>
-		    <artifactId>junit</artifactId>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-test</artifactId>
-		    <version>4.3.4.RELEASE</version>
-		    <scope>test</scope>
-		</dependency>
-		<dependency>
-		    <groupId>org.mockito</groupId>
-		    <artifactId>mockito-all</artifactId>
-		    <version>1.10.19</version>
-		    <scope>test</scope>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-			        <groupId>org.apache.maven.plugins</groupId>
-			        <artifactId>maven-shade-plugin</artifactId>
-			        <version>2.4.3</version>
-		        </plugin>
-	        </plugins>
-        </pluginManagement>
-		<plugins>
-			<plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-shade-plugin</artifactId>
-		        <executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-					</execution>
-				</executions>
-	        </plugin>
-		</plugins>
-	</build>
-	
 	<name>up</name>
 	<description>A function to launch an instance in the cloud for an end user. An instance is a running computer online.</description>
-
 </project>

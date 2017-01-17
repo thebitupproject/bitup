@@ -10,6 +10,9 @@ import org.springframework.context.ApplicationContext;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.services.ec2.AmazonEC2;
 
+import io.bit.up.spring.BootApplication;
+import io.bit.up.spring.BootConfiguration;
+
 public class BootApplicationTest {
 
 	@Test

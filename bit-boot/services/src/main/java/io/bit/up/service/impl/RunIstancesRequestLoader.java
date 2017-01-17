@@ -1,4 +1,4 @@
-package io.bit.up.ec2;
+package io.bit.up.service.impl;
 
 import com.amazonaws.services.ec2.model.RunInstancesRequest;
 

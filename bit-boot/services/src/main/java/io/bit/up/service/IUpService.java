@@ -1,4 +1,4 @@
-package io.bit.up.ec2;
+package io.bit.up.service;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;

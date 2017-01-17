@@ -1,4 +1,4 @@
-package io.bit.up.ec2;
+package io.bit.up.service;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.nullValue;
@@ -11,6 +11,7 @@ import org.junit.rules.ExpectedException;
 import com.amazonaws.services.ec2.model.RunInstancesRequest;
 
 import io.bit.up.pojo.BitUpRequest;
+import io.bit.up.service.impl.RunIstancesRequestLoader;
 import io.bit.up.test.builder.BitUpRequestBuilder;
 
 public class RunIstancesRequestLoaderTest {

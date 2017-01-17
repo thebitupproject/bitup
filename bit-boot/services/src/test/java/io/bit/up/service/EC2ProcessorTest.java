@@ -1,4 +1,4 @@
-package io.bit.up.ec2;
+package io.bit.up.service;
 
 import static org.mockito.Mockito.*;
 
@@ -17,12 +17,12 @@ import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.model.RunInstancesRequest;
 import com.amazonaws.services.ec2.model.RunInstancesResult;
 
-import io.bit.up.BootApplication;
 import io.bit.up.pojo.BitUpRequest;
+import io.bit.up.service.IUpService;
 import io.bit.up.test.builder.BitUpRequestBuilder;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes= { BootApplication.class, MockBeansConfig.class } )
+@ContextConfiguration(classes= { TestConfiguration.class } )
 public class EC2ProcessorTest {
     
     @Rule
@@ -32,18 +32,18 @@ public class EC2ProcessorTest {
     private AmazonEC2 amazonEC2;
 
     @Autowired
-    private IUpService processor;
+    private IUpService service;
 
 	@Test
 	public void testProcess_nullRequest() {
 		thrown.expect(ConstraintViolationException.class);
-		processor.up(null);
+		service.up(null);
 	}
 
 	@Test
 	public void testProcess_invalidRequest() {
 		thrown.expect(ConstraintViolationException.class);
-		processor.up(new BitUpRequest());
+		service.up(new BitUpRequest());
 	}
 
 	@Test
@@ -52,7 +52,7 @@ public class EC2ProcessorTest {
 				.withInstanceType("instanceType").withKeyName("keyName").withSecurityGroups("securityGroup").build();
 		when(amazonEC2.runInstances(Matchers.any(RunInstancesRequest.class))).thenReturn(new RunInstancesResult());
 		
-		processor.up(bitUpRequest);
+		service.up(bitUpRequest);
 	}
 
 }

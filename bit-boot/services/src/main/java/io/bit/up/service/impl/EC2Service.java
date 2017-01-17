@@ -1,4 +1,4 @@
-package io.bit.up.ec2;
+package io.bit.up.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +10,7 @@ import com.amazonaws.services.ec2.model.Reservation;
 import com.amazonaws.services.ec2.model.RunInstancesResult;
 
 import io.bit.up.pojo.BitUpRequest;
+import io.bit.up.service.IUpService;
 
 /**
  * Implements {@link IUpService} with AWS cloud service.<p>
