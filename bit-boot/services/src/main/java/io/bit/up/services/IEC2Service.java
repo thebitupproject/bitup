@@ -1,7 +1,7 @@
 package io.bit.up.services;
 
+import io.bit.up.pojo.BitUpShutdownRequest;
 import io.bit.up.pojo.BitUpStartRequest;
-import io.bit.up.pojo.BitUpTerminateRequest;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
@@ -23,9 +23,9 @@ public interface IEC2Service {
      */
     void up(@NotNull @Valid BitUpStartRequest request);
 
-//    void down(@NotNull @Valid BitUpTerminateRequest request);
+//    void down(@NotNull @Valid BitUpShutdownRequest request);
 
-    void shutdown(@NotNull @Valid BitUpTerminateRequest request);
+    void shutdown(@NotNull @Valid BitUpShutdownRequest request);
 
-//    void createUserSecurityGroup(@NotNull @Valid BitUpTerminateRequest request);
+//    void createUserSecurityGroup(@NotNull @Valid BitUpShutdownRequest request);
 }

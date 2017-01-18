@@ -25,13 +25,13 @@ public class BitUpStartRequestTest {
 	@Test
 	public void testPojo() throws JsonParseException, JsonMappingException, IOException {
 		BitUpStartRequest request = mapper.readValue(
-				new File(BitUpStartRequest.class.getResource("/").getFile() + "io/bit/up/pojo/bitUpRequest.json"),
+				new File(BitUpStartRequest.class.getResource("/").getFile() + "io/bit/up/pojo/bitUpStartRequest.json"),
 				BitUpStartRequest.class);
 
 		assertThat(request.getImageId(), equalTo("ami-9398d3e0"));
 		assertThat(request.getInstanceType(), equalTo("t2.micro"));
 		assertThat(request.getKeyName(), equalTo("bitup"));
-		assertThat(request.getSecurityGroups(), equalTo("sg-8132a5e7"));
+		assertThat(request.getSecurityGroups(), equalTo("sg-d5d990b3"));
 	}
 
 }

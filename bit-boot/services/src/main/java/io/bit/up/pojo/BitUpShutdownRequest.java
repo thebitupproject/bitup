@@ -2,7 +2,7 @@ package io.bit.up.pojo;
 
 import javax.validation.constraints.NotNull;
 
-public class BitUpTerminateRequest {
+public class BitUpShutdownRequest {
 
 	@NotNull
 	private String instanceId;
@@ -11,4 +11,7 @@ public class BitUpTerminateRequest {
         return instanceId;
     }
 
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
 }

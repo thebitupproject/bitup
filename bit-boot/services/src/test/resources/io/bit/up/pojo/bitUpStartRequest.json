@@ -2,5 +2,5 @@
     "imageId": "ami-9398d3e0",
 	"instanceType": "t2.micro",
 	"keyName": "bitup",
-	"securityGroups": "sg-8132a5e7"
+	"securityGroups": "sg-d5d990b3"
 }

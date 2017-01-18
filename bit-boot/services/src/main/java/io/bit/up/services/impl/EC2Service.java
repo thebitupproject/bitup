@@ -2,7 +2,7 @@ package io.bit.up.services.impl;
 
 import com.amazonaws.services.ec2.model.*;
 import io.bit.up.pojo.BitUpStartRequest;
-import io.bit.up.pojo.BitUpTerminateRequest;
+import io.bit.up.pojo.BitUpShutdownRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,9 +56,9 @@ public class EC2Service implements IEC2Service {
      *
      * @param request
      */
-    public void shutdown(BitUpTerminateRequest request) {
+    public void shutdown(BitUpShutdownRequest request) {
         LOG.info(String.format("Shutting down instance with parameters from request : %s", request));
-        TerminateInstancesResult results = amazonEC2.terminateInstances(TerminateInstancesRequestLoader.load(request));
+        TerminateInstancesResult results = amazonEC2.terminateInstances(ShutdownInstancesRequestLoader.load(request));
 
         //Get first instance as we are handling the termination of one instance simultaneously for now
         InstanceStateChange terminatedInstance = results.getTerminatingInstances().get(0);

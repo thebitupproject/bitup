@@ -10,6 +10,7 @@
 
 	<modules>
 		<module>up</module>
+		<module>shutdown</module>
 		<module>services</module>
 	</modules>
 	

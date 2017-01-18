@@ -24,7 +24,7 @@ public class RunInstancesRequestLoader {
 		        .withMinCount(1)
 		        .withMaxCount(1)
 		        .withKeyName(request.getKeyName());
-		
+
 		if (null != request.getSecurityGroups() && !request.getSecurityGroups().isEmpty()) {
 			runInstancesRequest.withSecurityGroupIds(request.getSecurityGroups());  
 		}
