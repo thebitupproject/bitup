@@ -2,6 +2,9 @@
 .idea/
 *.iml
 *target
+*.settings
+*.classpath
+*.project
 bit-boot/up/dependency-reduced-pom.xml
 bit-boot/up/terraform/terraform.tfstate
 bit-boot/up/terraform/terraform.tfstate.backup
