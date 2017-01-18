@@ -9,14 +9,15 @@ provider "aws" {
 resource "aws_s3_bucket" "lambda_bucket" {
   bucket = "bitup-functions"
   acl = "public-read-write"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_object" "jar_upload" {
   acl = "public-read-write"
   bucket = "${aws_s3_bucket.lambda_bucket.id}"
   key = "boot.jar"
-  source = "../target/up-1.0-SNAPSHOT.jar"
-  etag = "${md5(file("../target/up-1.0-SNAPSHOT.jar"))}"
+  source = "../target/up-0.0.1-SNAPSHOT.jar"
+  etag = "${md5(file("../target/up-0.0.1-SNAPSHOT.jar"))}"
 }
 
 resource "aws_lambda_function" "boot" {

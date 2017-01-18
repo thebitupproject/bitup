@@ -12,12 +12,12 @@
 //import com.amazonaws.services.lambda.runtime.RequestHandler;
 //
 //import io.bit.up.handler.BitUp;
-//import io.bit.up.pojo.BitUpRequest;
+//import io.bit.up.pojo.BitUpStartRequest;
 //import io.bit.up.test.builder.BitUpRequestBuilder;
 //
 //public class BitUpTest {
 //
-//	private RequestHandler<BitUpRequest, String> handler;
+//	private RequestHandler<BitUpStartRequest, String> handler;
 //
 //	@Rule
 //	public ExpectedException thrown = ExpectedException.none();

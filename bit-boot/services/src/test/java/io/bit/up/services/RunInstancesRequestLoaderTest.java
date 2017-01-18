@@ -1,4 +1,4 @@
-package io.bit.up.service;
+package io.bit.up.services;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.nullValue;
@@ -10,11 +10,11 @@ import org.junit.rules.ExpectedException;
 
 import com.amazonaws.services.ec2.model.RunInstancesRequest;
 
-import io.bit.up.pojo.BitUpRequest;
-import io.bit.up.service.impl.RunIstancesRequestLoader;
+import io.bit.up.pojo.BitUpStartRequest;
+import io.bit.up.services.impl.RunInstancesRequestLoader;
 import io.bit.up.test.builder.BitUpRequestBuilder;
 
-public class RunIstancesRequestLoaderTest {
+public class RunInstancesRequestLoaderTest {
 
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
@@ -22,12 +22,12 @@ public class RunIstancesRequestLoaderTest {
 	@Test
 	public void testLoad_nullData() {
 		thrown.expect(NullPointerException.class);
-		RunIstancesRequestLoader.load(null);
+		RunInstancesRequestLoader.load(null);
 	}
 
 	@Test
 	public void testLoad_nullAttributs() {
-		RunInstancesRequest request = RunIstancesRequestLoader.load(new BitUpRequest());
+		RunInstancesRequest request = RunInstancesRequestLoader.load(new BitUpStartRequest());
 
 		assertThat(request.getImageId(), nullValue());
 		assertThat(request.getInstanceType(), nullValue());
@@ -37,10 +37,10 @@ public class RunIstancesRequestLoaderTest {
 
 	@Test
 	public void testLoad() {
-		BitUpRequest bitUpRequest = new BitUpRequestBuilder().withImageId("imageId")
+		BitUpStartRequest bitUpStartRequest = new BitUpRequestBuilder().withImageId("imageId")
 				.withInstanceType("instanceType").withKeyName("keyName").withSecurityGroups("securityGroup").build();
 		
-		RunInstancesRequest request = RunIstancesRequestLoader.load(bitUpRequest);
+		RunInstancesRequest request = RunInstancesRequestLoader.load(bitUpStartRequest);
 
 		assertThat(request.getImageId(), equalTo("imageId"));
 		assertThat(request.getInstanceType(), equalTo("instanceType"));

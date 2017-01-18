@@ -13,7 +13,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class BitUpRequestTest {
+public class BitUpStartRequestTest {
 
 	private ObjectMapper mapper;
 
@@ -24,9 +24,9 @@ public class BitUpRequestTest {
 
 	@Test
 	public void testPojo() throws JsonParseException, JsonMappingException, IOException {
-		BitUpRequest request = mapper.readValue(
-				new File(BitUpRequest.class.getResource("/").getFile() + "io/bit/up/pojo/bitUpRequest.json"),
-				BitUpRequest.class);
+		BitUpStartRequest request = mapper.readValue(
+				new File(BitUpStartRequest.class.getResource("/").getFile() + "io/bit/up/pojo/bitUpRequest.json"),
+				BitUpStartRequest.class);
 
 		assertThat(request.getImageId(), equalTo("ami-9398d3e0"));
 		assertThat(request.getInstanceType(), equalTo("t2.micro"));

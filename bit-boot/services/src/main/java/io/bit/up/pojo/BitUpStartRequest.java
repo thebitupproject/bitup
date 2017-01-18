@@ -2,7 +2,7 @@ package io.bit.up.pojo;
 
 import javax.validation.constraints.NotNull;
 
-public class BitUpRequest {
+public class BitUpStartRequest {
 
 	@NotNull
 	private String imageId;

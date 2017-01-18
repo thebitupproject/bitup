@@ -1,4 +1,4 @@
-package io.bit.up.service;
+package io.bit.up.services;
 
 import static org.mockito.Mockito.mock;
 

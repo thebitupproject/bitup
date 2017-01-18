@@ -1,6 +1,6 @@
 package io.bit.up.test.builder;
 
-import io.bit.up.pojo.BitUpRequest;
+import io.bit.up.pojo.BitUpStartRequest;
 
 public class BitUpRequestBuilder {
 	
@@ -29,8 +29,8 @@ public class BitUpRequestBuilder {
 		return this;
 	}
 	
-	public BitUpRequest build() {
-		BitUpRequest request = new BitUpRequest();
+	public BitUpStartRequest build() {
+		BitUpStartRequest request = new BitUpStartRequest();
 		request.setSecurityGroups(this.securityGroups);
 		request.setKeyName(this.keyName);
 		request.setImageId(this.imageId);

@@ -1,4 +1,7 @@
 /.project
 .idea/
 *.iml
-target
+*target
+bit-boot/up/dependency-reduced-pom.xml
+bit-boot/up/terraform/terraform.tfstate
+bit-boot/up/terraform/terraform.tfstate.backup
