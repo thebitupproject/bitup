@@ -1,5 +1,6 @@
 package io.bit.up.handler;
 
+import io.bit.up.BootApplication;
 import io.bit.up.pojo.BitUpStartRequest;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
@@ -7,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-import io.bit.up.spring.BootApplication;
 import io.bit.up.services.IEC2Service;
 
 /**
